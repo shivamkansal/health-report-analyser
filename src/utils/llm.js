@@ -35,7 +35,7 @@ async function generatePatientFriendlySummary(extractedJson) {
       { role: 'user', content: prompt }
     ],
     temperature: 0.3,
-    max_tokens: 1600
+    max_tokens: 3200
   });
 
   // Try to parse the response as JSON
