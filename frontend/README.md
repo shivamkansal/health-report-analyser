@@ -5,4 +5,4 @@ This React app provides a web interface for uploading health reports and viewing
 ## Setup
 - Run `npm install` in this folder
 - Start with `npm start`
-- Connects to backend at `http://localhost:8000`
+- Connects to backend at `https://health-report-analyser.onrender.com`

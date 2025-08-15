@@ -25,7 +25,7 @@ export default function App() {
     const formData = new FormData();
     files.forEach(f => formData.append('files', f));
     try {
-      const res = await axios.post('http://localhost:8000/extract-and-summarize/', formData, {
+      const res = await axios.post('https://health-report-analyser.onrender.com/extract-and-summarize/', formData, {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
       setResults(res.data.results);
@@ -103,7 +103,7 @@ export default function App() {
                         <Box mt={1} display="flex" gap={1}>
                           <Button variant="outlined" size="small" onClick={async () => {
                             try {
-                              const res = await fetch(`http://localhost:8000/download-html/${r.html_filename}`);
+                              const res = await fetch(`https://health-report-analyser.onrender.com/download-html/${r.html_filename}`);
                               const html = await res.text();
                               setHtmlContent(html);
                               setOpenHtml(true);
@@ -111,7 +111,7 @@ export default function App() {
                               setError('Failed to load HTML report');
                             }
                           }}>View HTML Report</Button>
-                          <Link href={`http://localhost:8000/download-html/${r.html_filename}`} target="_blank" rel="noopener" sx={{ ml: 1 }}>
+                          <Link href={`https://health-report-analyser.onrender.com/download-html/${r.html_filename}`} target="_blank" rel="noopener" sx={{ ml: 1 }}>
                             Download
                           </Link>
                         </Box>
