@@ -1,0 +1,13 @@
+[build]
+  command = "npm run build"
+  publish = "frontend/build"
+
+[dev]
+  command = "npm start"
+  port = 3000
+  targetPort = 5000
+
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/server"
+  status = 200
