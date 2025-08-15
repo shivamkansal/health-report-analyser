@@ -11,7 +11,7 @@ async function generateSummaryHTML(filename, summaryObj) {
   if (!fs.existsSync(htmlDir)) {
     fs.mkdirSync(htmlDir, { recursive: true });
   }
-  const htmlFilename = summary_${path.parse(filename).name}.html;
+  const htmlFilename = `summary_${path.parse(filename).name}.html`;
   const htmlPath = path.join(htmlDir, htmlFilename);
 
   // Compose prompt for GPT to generate HTML
